@@ -5,6 +5,6 @@ const reducers = {
     todos,
 };
 
-const groupReducer = combineReducers(reducers);
+const rootReducer = combineReducers(reducers);
 
 export const configureStore = () => createStore(rootReducer);
