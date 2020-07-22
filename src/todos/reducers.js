@@ -29,10 +29,10 @@ export const todos = (state = [], action) => {
         }
 
         case MARK_COMPLETED: {
-            const { text } = payload;
+            const { todo: todoToUpdate } = payload;
             return state.map(todo => {
-                if (todo.text === text) {
-                    return { ...todo, isCompleted: true };
+                if (todo.id === todoToUpdate.id) {
+                    return todoToUpdate;
                 }
 
                 return todo;
