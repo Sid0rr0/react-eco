@@ -9,7 +9,7 @@ import { loadTodos } from './thunks';
 const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, startLoadingTodos }) => {
     useEffect(() => {
         startLoadingTodos();
-    }, [])
+    }, []);
 
     const loadingMessage = <div>Loading todos...</div>;
     const content = (

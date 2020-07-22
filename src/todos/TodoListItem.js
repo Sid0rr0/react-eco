@@ -5,7 +5,7 @@ const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
     <div className="todo-item-container">
         <h3>{todo.text}</h3>
         <div className="buttons-container">
-            {todo.isComplete
+            {todo.isCompleted
                 ? null
                 : <button
                     onClick={() => onCompletedPressed(todo.text)}

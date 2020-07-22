@@ -19,12 +19,8 @@ export const todos = (state = [], action) => {
 
     switch(type) {
         case CREATE_TODO: {
-            const { text } = payload;
-            const newTodo = {
-                text,
-                isComplete: false
-            };
-            return state.concat(newTodo);
+            const { todo } = payload;
+            return state.concat(todo);
         }
 
         case REMOVE_TODO: {
@@ -35,8 +31,9 @@ export const todos = (state = [], action) => {
         case MARK_COMPLETED: {
             const { text } = payload;
             return state.map(todo => {
-                if(todo.text === text)
-                    todo.isComplete = true;
+                if (todo.text === text) {
+                    return { ...todo, isCompleted: true };
+                }
 
                 return todo;
             });
